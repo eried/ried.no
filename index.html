@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ried.no</title>
+    <meta name="description" content="Erwin Ried - Civil Computer Engineer. Chilean born, Norway based. Creator of PortaPack Mayhem, Flipper Zero hats, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        @font-face {
+            font-family: 'SonyFont';
+            src: url('sony_normal.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'C64Pro';
+            src: url('data:font/woff2;base64,d09GMgABAAAAACIAAA4AAAAAUfAAACGmAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbDBweBmA/U1RBVE0cgTQRCAqBeIF0C4EAATYCJAM0BCAFhAgHgXIMgSYb10pVB2wciKy4EUlkL4r+/0uCG4alDdRdRBCqCNDG7ELPwNP9flO1X1xVLdU+bJipVLV6s6MJmYjYuZloFZ1O0Zp91NhJ2GrWjJMlZGZiZiYW7p/v7vf3fwDkqppqqmqLVq1atVq1atVq1aoNwNcXAH8AAB8AHwAfAB8AHwAfAB8AHwBfGwAb0QLjAOu0TqpTuVSupjuVm+Vu5dF0v/KkPKt8Vl6WV+UN5V3li/JV+ab8UP5i+Iv1bxZ+sv/T9k+7P+3+tP3T5k/rP63+tPjTvD/N+tOkP436E/UnfqV0JXCldLl8KXUpdyl/KX0peyl1KXEpcSl+KXYpeilyKXIpcil8KXQpcClwKXApcMl3yX/Je8l7yXPJfclzyX3Je8l1yXXJdcl5yXnJecl5yXHJcclxyXHJfsm+p1IXH6PqQqwuRNdF1wVwJagSQkmH0hJ9V9vPmT24YvXPAWzSIkLHhHpUW7B8RVuhsS8NClVBxUhXEmAksJJBjQV+vUmsDvk5sqLv9HpNMNWLQ7ySvmJFI66RFcr32X+QFJlJVtfOPedc3FdYFJb0laWSFSUJlJRYVUmJYsUKq5GVKBPLgvYCWSEnKOgQaA4E2uEYCLjjKOCKE4ELjoVX3w30nJfF3kHn7u1r79q7d+89uu+uJAAEBARkkRBQkCGFEmmkk0kmOeSRj4KCQopRhFJKU5YKVKQy1ahOTepwNc7lOq7PjbiJ0bhDO4bb8IDe1Jv6ciuu0hu0pz10oCP0pH7hYTJh/bA/OtKJTvSimtQEG9JD2tGe9nSmC12pG92pB/F0eM2gD3TN1e1xA52wTJVoTWu0gbaEnIYQMjrBJGhGCxrTiEYRbS6O5fF/V/+o/gJJKyp32hMkrK7c4s4kWFm5yp1NsKJynjtX+FVKiJCQ0TUo9cBAAi1b/TDmH2IjNfLxm20cIqSkEkk/Ev5CIiGkO4f/IvGPO9xN7lzmS+VlvlI+xlfLK3y9fBV/r7yK75dX8b3yU7xAvoa/W17D98rr+FJ5B18rb+Kz5UO8V97Bp0t5kU/LS+VH+HTpLj5dyk/xmfIufLZ8Gp8tP8dnyr/g0+W/8Onybnym/AM+Vf6Fz5Tv4zPle/h0+RY+U76NT5d/x2fKf+NT5T/xqfJ/+FT5Pzpd/k9Plf+nU+X/8anyf3Sq/F9TqvIKp8rv0unK/9Kpyv/T6cr/06nK//OLbvt/Vfn/L+X/L4K+E/0fBP9/8v9f1/9vSv6Xpvz/peX/v53//5JMKf9rWv5fA/+X4PnPbfmfNxXNRRfJO/4m3PqYexJ+3A3+8UHu94b/xIv+S9/A/2k/N5Sf04/n/3kN/ydZSd6fv4H+/Ov4P8Z2/q+J/ucG/M+L+U+8UP7j3Phfivk/N4w/J/G/x/Gfcsj/8Bv4n74G/zQw/zn+9F/uHf/Zzn5byn/xyX0v/Yv5n+dD/93xP9HlPwPJeE/ZeX/uy75H+v2/1i+/8vG/Yco+V9J+L+U/B9l5f8sff+HUr0xAQAAAAAAACAgIACsAADAAAAAHwAAHwAAAADsBwAAgCcAAPhyAF4AAAAAAACAAAAaAgAAAAQCAABVAgAAAP4AAABYAADkAQAAALkAAAC5AAAAuQAAALkAAAC5AAAAuQAAALkAAABZAAAAWQAAAFkAAABZAAAAWQAAAFkAAABZAAAAWQAAANkBAADZAQAA2QEAAKACAAD+AAAAEAAIAAEAAADcAQIAbQHcAAQGAA==') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --c64-blue-dark: #40318d;
+            --c64-blue-light: #7869c4;
+            --c64-blue-border: #40318d;
+            --c64-white: #ffffff;
+            --c64-cyan: #70a4b2;
+            --c64-green: #5cab5e;
+            --c64-yellow: #d0dc71;
+            --c64-red: #9f4e44;
+            --c64-purple: #a057a3;
+            --crt-glow: rgba(120, 105, 196, 0.6);
+            --scanline-opacity: 0.08;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: 'C64Pro', 'Press Start 2P', monospace;
+            background: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1200px;
+            min-height: 100vh;
+        }
+
+        /* Starfield background */
+        .starfield {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+
+        .star.layer-1 {
+            animation: twinkle 4s ease-in-out infinite, drift-slow 120s linear infinite;
+        }
+
+        .star.layer-2 {
+            animation: twinkle 3s ease-in-out infinite, drift-medium 80s linear infinite;
+        }
+
+        .star.layer-3 {
+            animation: twinkle 2s ease-in-out infinite, drift-fast 50s linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes drift-slow {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100px, 100px); }
+        }
+
+        @keyframes drift-medium {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-150px, 150px); }
+        }
+
+        @keyframes drift-fast {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-200px, 200px); }
+        }
+
+        /* Shooting star */
+        .shooting-star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: linear-gradient(45deg, #fff, #ffd700, transparent);
+            border-radius: 50%;
+            box-shadow: 0 0 6px 2px rgba(255, 215, 0, 0.6);
+            opacity: 0;
+        }
+
+        .shooting-star::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translateY(-50%);
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(255, 215, 0, 0.8), rgba(255, 255, 255, 0.4), transparent);
+        }
+
+        @keyframes shoot {
+            0% {
+                opacity: 0;
+                transform: translate(0, 0) rotate(-45deg);
+            }
+            10% {
+                opacity: 1;
+            }
+            70% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-400px, 400px) rotate(-45deg);
+            }
+        }
+
+        /* Float wrapper for vertical animation */
+        .float-wrapper {
+            animation: float 16s ease-in-out infinite;
+            transform-style: preserve-3d;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Monitor container with 3D transform */
+        .monitor-container {
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 2s ease-out;
+            transform-style: preserve-3d;
+            transform: rotateX(5deg) rotateY(-8deg);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: rotateX(20deg) rotateY(-20deg) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: rotateX(5deg) rotateY(-8deg) scale(1);
+            }
+        }
+
+        /* The monitor frame */
+        .monitor {
+            background: linear-gradient(145deg, #4a4a4a 0%, #2a2a2a 50%, #1a1a1a 100%);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow:
+                0 0 60px rgba(120, 105, 196, 0.4),
+                0 30px 60px rgba(0, 0, 0, 0.8),
+                inset 0 2px 0 rgba(255, 255, 255, 0.1),
+                inset 0 -2px 0 rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .monitor::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            border-radius: 2px;
+        }
+
+        /* Monitor badge - Sony font style */
+        .monitor-badge {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'SonyFont', Georgia, serif;
+            font-size: 20px;
+            font-weight: normal;
+            color: rgba(170, 170, 170, 0.6);
+            letter-spacing: 2px;
+        }
+
+        /* Power LED */
+        .power-led {
+            position: absolute;
+            bottom: 12px;
+            right: 40px;
+            width: 8px;
+            height: 8px;
+            background: var(--c64-green);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--c64-green), 0 0 20px var(--c64-green);
+            animation: pulse-led 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-led {
+            0%, 100% { opacity: 1; box-shadow: 0 0 10px var(--c64-green), 0 0 20px var(--c64-green); }
+            50% { opacity: 0.7; box-shadow: 0 0 5px var(--c64-green), 0 0 10px var(--c64-green); }
+        }
+
+        /* Screen bezel */
+        .screen-bezel {
+            background: var(--c64-blue-border);
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+            box-shadow:
+                inset 0 0 50px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(64, 49, 141, 0.5);
+        }
+
+        /* CRT Screen */
+        .crt-screen {
+            background: radial-gradient(ellipse at center, #1a1a1a 0%, #0d0d0d 70%, #000000 100%);
+            width: 640px;
+            height: 400px;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+            box-shadow:
+                inset 0 0 100px rgba(0, 0, 0, 0.5),
+                0 0 20px rgba(50, 50, 80, 0.4);
+        }
+
+        /* CRT effects */
+        .crt-screen::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 50%,
+                rgba(0, 0, 0, var(--scanline-opacity)) 50%
+            );
+            background-size: 100% 2px;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .crt-screen::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(
+                ellipse at center,
+                transparent 0%,
+                rgba(0, 0, 0, 0.2) 90%,
+                rgba(0, 0, 0, 0.4) 100%
+            );
+            pointer-events: none;
+            z-index: 11;
+        }
+
+        /* Screen content */
+        .screen-content {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            right: 12px;
+            bottom: 12px;
+            color: var(--c64-blue-light);
+            font-size: 12px;
+            line-height: 1.4;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .screen-content::-webkit-scrollbar {
+            display: none;
+        }
+
+        .screen-content .output-line {
+            color: var(--c64-white);
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .screen-content .output-line.error {
+            color: #cc4444;
+        }
+
+        .screen-content .output-line.success {
+            color: var(--c64-green);
+        }
+
+        .screen-content .output-line.highlight {
+            color: var(--c64-yellow);
+        }
+
+        .screen-content .output-line.purple {
+            color: var(--c64-purple);
+        }
+
+        .screen-content .output-line.center {
+            text-align: center;
+        }
+
+        /* Input line */
+        .input-line {
+            display: flex;
+            align-items: center;
+            color: var(--c64-white);
+            margin-top: 4px;
+            position: relative;
+        }
+
+        .input-line .input-display {
+            color: var(--c64-white);
+            white-space: pre;
+        }
+
+        .input-line input {
+            position: absolute;
+            left: -9999px;
+            opacity: 0;
+        }
+
+        /* Blinking cursor */
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 14px;
+            background: var(--c64-white);
+            animation: blink 1s step-end infinite;
+            vertical-align: middle;
+            margin-left: 1px;
+        }
+
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+
+        /* Screen flicker effect */
+        @keyframes flicker {
+            0% { opacity: 0.97; }
+            5% { opacity: 0.95; }
+            10% { opacity: 0.98; }
+            15% { opacity: 0.96; }
+            20% { opacity: 0.99; }
+            25% { opacity: 0.94; }
+            30% { opacity: 0.98; }
+            35% { opacity: 0.97; }
+            40% { opacity: 0.99; }
+            45% { opacity: 0.95; }
+            50% { opacity: 0.98; }
+            55% { opacity: 0.96; }
+            60% { opacity: 0.99; }
+            65% { opacity: 0.97; }
+            70% { opacity: 0.95; }
+            75% { opacity: 0.98; }
+            80% { opacity: 0.96; }
+            85% { opacity: 0.99; }
+            90% { opacity: 0.97; }
+            95% { opacity: 0.98; }
+            100% { opacity: 0.97; }
+        }
+
+        .crt-screen {
+            animation: flicker 0.15s infinite;
+        }
+
+        /* Boot sequence animation */
+        .boot-text {
+            animation: typewriter 0.05s steps(1) forwards;
+        }
+
+        /* Link styling in output */
+        .screen-content a {
+            color: var(--c64-yellow);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .screen-content a:hover {
+            color: var(--c64-white);
+            text-decoration: underline;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .monitor {
+                padding: 15px;
+                border-radius: 15px;
+            }
+
+            .screen-bezel {
+                padding: 10px;
+            }
+
+            .crt-screen {
+                width: 320px;
+                height: 400px;
+            }
+
+            .screen-content {
+                font-size: 8px;
+                top: 8px;
+                left: 8px;
+                right: 8px;
+                bottom: 8px;
+                line-height: 1.3;
+            }
+
+            .float-wrapper {
+                animation: float 16s ease-in-out infinite;
+            }
+
+            .monitor-container {
+                animation: fadeIn 2s ease-out;
+                transform: rotateX(2deg) rotateY(-3deg);
+            }
+
+            .cursor {
+                width: 7px;
+                height: 10px;
+            }
+        }
+
+        /* Loading screen */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .loading-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* ASCII art styling */
+        .ascii-art {
+            color: var(--c64-cyan);
+            font-size: 12px;
+            line-height: 1.2;
+        }
+
+        @media (max-width: 768px) {
+            .ascii-art {
+                font-size: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="starfield" id="starfield"></div>
+
+    <div class="loading-overlay" id="loading">
+        <div style="color: var(--c64-cyan); font-family: 'Press Start 2P', monospace; font-size: 14px;">
+            LOADING...
+        </div>
+    </div>
+
+    <div class="float-wrapper">
+        <div class="monitor-container">
+            <div class="monitor">
+            <div class="screen-bezel">
+                <div class="crt-screen">
+                    <div class="screen-content" id="screen">
+                        <!-- Content will be injected here -->
+                    </div>
+                </div>
+            </div>
+            <div class="monitor-badge">RIED</div>
+            <div class="power-led"></div>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // RIED.NO - C64 BASIC INTERPRETER
+        // By Erwin Ried (@eried)
+        // ============================================
+
+        const C64 = {
+            // BASIC program storage - preloaded with demo
+            program: {
+                10: 'PRINT "HELLO WORLD"',
+                20: 'GOTO 10'
+            },
+
+            // Runtime state
+            running: false,
+            breakRequested: false,
+            currentLine: 0,
+            loopCount: 0,
+            maxLoopsPerFrame: 100,
+
+            // Screen reference
+            screen: null,
+            inputElement: null,
+
+            // Command history
+            history: [],
+            historyIndex: -1,
+
+            // Links data
+            links: [
+                { name: 'GITHUB', url: 'https://github.com/eried', desc: 'Code repositories' },
+                { name: 'YOUTUBE', url: 'https://youtube.com/@eried', desc: 'Video tutorials' },
+                { name: 'PORTAPACK MAYHEM', url: 'https://github.com/portapack-mayhem/mayhem-firmware', desc: 'HackRF firmware' },
+                { name: 'FLIPPER ZERO', url: 'https://github.com/eried/flipperzero-mayhem', desc: 'Flipper add-ons' },
+                { name: 'ARDUBOY', url: 'https://arduboy.ried.cl', desc: 'Game collection' },
+                { name: 'BLOG', url: 'https://blog.ried.cl', desc: 'Tech articles' },
+                { name: 'LINKEDIN', url: 'https://linkedin.com/in/eried', desc: 'Professional' },
+                { name: 'TWITTER/X', url: 'https://twitter.com/erwinried', desc: 'Social updates' },
+                { name: 'TIKTOK', url: 'https://tiktok.com/@eried', desc: 'Short videos' },
+                { name: 'INSTAGRAM', url: 'https://instagram.com/erwinriedr', desc: 'Photos' },
+                { name: 'MAKERWORLD', url: 'https://makerworld.com/en/@eried', desc: '3D prints' },
+                { name: 'HPCALC.ORG', url: 'https://www.hpcalc.org/hp48/authors/eried/', desc: 'HP calculators' }
+            ],
+
+            projects: [
+                { name: 'PORTAPACK MAYHEM', desc: 'Custom firmware for HackRF PortaPack H1/H2' },
+                { name: 'FLIPPERZERO MAYHEM', desc: 'Hardware add-ons for Flipper Zero' },
+                { name: 'ARDUBOY COLLECTION', desc: 'Curated games and tools for Arduboy' },
+                { name: 'HP CALCULATOR TOOLS', desc: 'Software for HP48/49/50 calculators' }
+            ],
+
+            // Initialize the terminal
+            init() {
+                this.screen = document.getElementById('screen');
+                this.createStarfield();
+                this.bootSequence();
+            },
+
+            // Create starfield background
+            createStarfield() {
+                const starfield = document.getElementById('starfield');
+
+                // Layer 1 - Distant slow stars
+                for (let i = 0; i < 60; i++) {
+                    const star = document.createElement('div');
+                    star.className = 'star layer-1';
+                    star.style.left = Math.random() * 120 + '%';
+                    star.style.top = Math.random() * 120 - 20 + '%';
+                    star.style.width = star.style.height = (Math.random() * 0.9 + 0.3) + 'px';
+                    star.style.animationDelay = Math.random() * 4 + 's';
+                    star.style.opacity = 0.4 + Math.random() * 0.3;
+                    starfield.appendChild(star);
+                }
+
+                // Layer 2 - Medium stars
+                for (let i = 0; i < 40; i++) {
+                    const star = document.createElement('div');
+                    star.className = 'star layer-2';
+                    star.style.left = Math.random() * 120 + '%';
+                    star.style.top = Math.random() * 120 - 20 + '%';
+                    star.style.width = star.style.height = (Math.random() * 1.3 + 0.5) + 'px';
+                    star.style.animationDelay = Math.random() * 3 + 's';
+                    star.style.opacity = 0.5 + Math.random() * 0.4;
+                    starfield.appendChild(star);
+                }
+
+                // Layer 3 - Closer faster stars
+                for (let i = 0; i < 20; i++) {
+                    const star = document.createElement('div');
+                    star.className = 'star layer-3';
+                    star.style.left = Math.random() * 120 + '%';
+                    star.style.top = Math.random() * 120 - 20 + '%';
+                    star.style.width = star.style.height = (Math.random() * 1.7 + 0.8) + 'px';
+                    star.style.animationDelay = Math.random() * 2 + 's';
+                    star.style.opacity = 0.7 + Math.random() * 0.3;
+                    starfield.appendChild(star);
+                }
+
+                // Start shooting star spawner
+                this.spawnShootingStars(starfield);
+            },
+
+            // Spawn shooting stars occasionally
+            spawnShootingStars(starfield) {
+                const createShootingStar = () => {
+                    const star = document.createElement('div');
+                    star.className = 'shooting-star';
+                    star.style.left = 20 + Math.random() * 60 + '%';
+                    star.style.top = Math.random() * 40 + '%';
+                    star.style.animation = 'shoot 1.5s ease-out forwards';
+                    starfield.appendChild(star);
+
+                    // Remove after animation
+                    setTimeout(() => {
+                        star.remove();
+                    }, 1500);
+                };
+
+                // Random interval between 8-20 seconds
+                const scheduleNext = () => {
+                    const delay = 8000 + Math.random() * 12000;
+                    setTimeout(() => {
+                        createShootingStar();
+                        scheduleNext();
+                    }, delay);
+                };
+
+                // Start after initial delay
+                setTimeout(scheduleNext, 5000);
+            },
+
+            // Boot sequence animation
+            async bootSequence() {
+                await this.delay(500);
+                document.getElementById('loading').classList.add('hidden');
+                await this.delay(300);
+
+                // Yellow header lines - centered
+                await this.printLine('');
+                await this.delay(30);
+                await this.printLine('**** COMMODORIED 64 BASIC V2 ****', 'highlight center');
+                await this.delay(30);
+                await this.printLine('');
+                await this.delay(30);
+
+                // White standard lines - centered
+                await this.printLine('64K RAM SYSTEM  38911 BASIC BYTES FREE', 'center');
+                await this.delay(30);
+                await this.printLine('');
+                await this.delay(30);
+                await this.printLine('READY.');
+                await this.delay(30);
+
+                // Show help hint
+                await this.printLine('');
+                await this.delay(30);
+                await this.printLine('TYPE "HELP" FOR COMMANDS', 'purple');
+                await this.delay(30);
+                await this.printLine('');
+
+                this.createInputLine();
+            },
+
+            // Print a line to the screen
+            async printLine(text, className = '') {
+                const line = document.createElement('div');
+                line.className = 'output-line' + (className ? ' ' + className : '');
+                line.innerHTML = text;
+
+                // Insert before input line if it exists
+                const inputLine = this.screen.querySelector('.input-line');
+                if (inputLine) {
+                    this.screen.insertBefore(line, inputLine);
+                } else {
+                    this.screen.appendChild(line);
+                }
+
+                this.scrollToBottom();
+            },
+
+            // Create the input line
+            createInputLine() {
+                // Remove existing input line
+                const existing = this.screen.querySelector('.input-line');
+                if (existing) existing.remove();
+
+                const inputLine = document.createElement('div');
+                inputLine.className = 'input-line';
+                inputLine.innerHTML = `<span class="input-display"></span><span class="cursor"></span><input type="text" id="input" autocomplete="off" autocapitalize="characters" spellcheck="false">`;
+                this.screen.appendChild(inputLine);
+
+                this.inputElement = document.getElementById('input');
+                this.inputDisplay = inputLine.querySelector('.input-display');
+                this.inputElement.focus();
+
+                // Handle input and update display
+                this.inputElement.addEventListener('input', () => {
+                    this.inputDisplay.textContent = this.inputElement.value.toUpperCase();
+                });
+
+                this.inputElement.addEventListener('keydown', (e) => this.handleKeydown(e));
+
+                // Keep focus on input
+                document.addEventListener('click', () => {
+                    if (this.inputElement && !this.running) {
+                        this.inputElement.focus();
+                    }
+                });
+
+                // Handle key press to stop running program (Escape, Ctrl+C, Pause/Break)
+                document.addEventListener('keydown', (e) => {
+                    // Ctrl+C or Pause/Break to stop program
+                    if ((e.ctrlKey && e.key === 'c') || e.key === 'Pause' || e.key === 'Break') {
+                        if (this.running) {
+                            e.preventDefault();
+                            this.breakRequested = true;
+                        }
+                    }
+                    // Escape or S to stop (legacy)
+                    if (this.running && (e.key === 'Escape' || e.key === 's' || e.key === 'S')) {
+                        this.breakRequested = true;
+                    }
+                });
+
+                this.scrollToBottom();
+            },
+
+            // Handle keydown events
+            handleKeydown(e) {
+                if (e.key === 'Enter') {
+                    const command = this.inputElement.value.toUpperCase().trim();
+                    this.inputElement.value = '';
+                    this.inputDisplay.textContent = '';
+
+                    // Add to history
+                    if (command) {
+                        this.history.push(command);
+                        this.historyIndex = this.history.length;
+                    }
+
+                    // Show the command
+                    this.printLine(command);
+
+                    // Process the command
+                    this.processCommand(command);
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    if (this.historyIndex > 0) {
+                        this.historyIndex--;
+                        this.inputElement.value = this.history[this.historyIndex];
+                        this.inputDisplay.textContent = this.history[this.historyIndex];
+                    }
+                } else if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    if (this.historyIndex < this.history.length - 1) {
+                        this.historyIndex++;
+                        this.inputElement.value = this.history[this.historyIndex];
+                        this.inputDisplay.textContent = this.history[this.historyIndex];
+                    } else {
+                        this.historyIndex = this.history.length;
+                        this.inputElement.value = '';
+                        this.inputDisplay.textContent = '';
+                    }
+                }
+            },
+
+            // Process a command
+            async processCommand(cmd) {
+                // Empty input - just like C64, do nothing
+                if (!cmd) {
+                    return;
+                }
+
+                // Check if it's a numbered line (program entry)
+                // In real C64 BASIC, entering a line just stores it silently
+                const lineMatch = cmd.match(/^(\d+)\s*(.*)/);
+                if (lineMatch) {
+                    const lineNum = parseInt(lineMatch[1]);
+                    const code = lineMatch[2];
+
+                    if (code) {
+                        this.program[lineNum] = code;
+                    } else {
+                        // Empty line deletes the line
+                        delete this.program[lineNum];
+                    }
+                    // No READY printed - just like real C64
+                    return;
+                }
+
+                // Handle commands
+                const parts = cmd.split(/\s+/);
+                const command = parts[0];
+                const args = parts.slice(1).join(' ');
+
+                switch (command) {
+                    case 'RUN':
+                        await this.runProgram();
+                        break;
+
+                    case 'LIST':
+                        this.listProgram();
+                        break;
+
+                    case 'NEW':
+                        this.program = {};
+                        this.printLine('');
+                        this.printLine('READY.');
+                        break;
+
+                    case 'CLS':
+                    case 'CLEAR':
+                        this.clearScreen();
+                        break;
+
+                    case 'HELP':
+                    case '?':
+                        this.showHelp();
+                        break;
+
+                    case 'ABOUT':
+                        this.showAbout();
+                        break;
+
+                    case 'LINKS':
+                        this.showLinks();
+                        break;
+
+                    case 'PROJECTS':
+                        this.showProjects();
+                        break;
+
+                    case 'ORIGINAL':
+                    case 'RIED.CL':
+                        this.printLine('');
+                        this.printLine('REDIRECTING TO RIED.CL...', 'success');
+                        await this.delay(1000);
+                        window.location.href = 'https://ried.cl';
+                        break;
+
+                    case 'PRINT':
+                        // Direct PRINT command
+                        this.executePrint(args);
+                        this.printLine('');
+                        this.printLine('READY.');
+                        break;
+
+                    case 'GOTO':
+                        this.printLine('');
+                        this.printLine('?ILLEGAL DIRECT ERROR', 'error');
+                        this.printLine('');
+                        this.printLine('READY.');
+                        break;
+
+                    case 'MATRIX':
+                        await this.matrixEffect();
+                        break;
+
+                    case 'DEMO':
+                        await this.runDemo();
+                        break;
+
+                    default:
+                        this.printLine('');
+                        this.printLine('?SYNTAX ERROR', 'error');
+                        this.printLine('');
+                        this.printLine('READY.');
+                }
+            },
+
+            // Run the BASIC program
+            async runProgram() {
+                const lineNumbers = Object.keys(this.program).map(Number).sort((a, b) => a - b);
+
+                if (lineNumbers.length === 0) {
+                    this.printLine('');
+                    this.printLine('READY.');
+                    return;
+                }
+
+                this.running = true;
+                this.breakRequested = false;
+                this.loopCount = 0;
+
+                let lineIndex = 0;
+                this.printLine('');
+
+                while (lineIndex < lineNumbers.length && this.running) {
+                    if (this.breakRequested) {
+                        this.printLine('');
+                        this.printLine('BREAK IN ' + lineNumbers[lineIndex], 'error');
+                        break;
+                    }
+
+                    const lineNum = lineNumbers[lineIndex];
+                    const code = this.program[lineNum];
+
+                    // Parse and execute the line
+                    const result = await this.executeLine(code, lineNum);
+
+                    if (result.goto !== undefined) {
+                        // Handle GOTO
+                        const targetIndex = lineNumbers.indexOf(result.goto);
+                        if (targetIndex === -1) {
+                            this.printLine('?UNDEF\'D STATEMENT ERROR IN ' + lineNum, 'error');
+                            break;
+                        }
+                        lineIndex = targetIndex;
+
+                        // Prevent infinite loops from freezing
+                        this.loopCount++;
+                        if (this.loopCount >= this.maxLoopsPerFrame) {
+                            this.loopCount = 0;
+                            await this.delay(0); // Yield to browser
+                        }
+                    } else if (result.end) {
+                        break;
+                    } else {
+                        lineIndex++;
+                    }
+                }
+
+                this.running = false;
+                this.printLine('');
+                this.printLine('READY.');
+            },
+
+            // Execute a single line of BASIC
+            async executeLine(code, lineNum) {
+                code = code.trim();
+
+                // PRINT statement
+                if (code.startsWith('PRINT')) {
+                    const arg = code.substring(5).trim();
+                    this.executePrint(arg);
+                    return {};
+                }
+
+                // GOTO statement
+                if (code.startsWith('GOTO')) {
+                    const target = parseInt(code.substring(4).trim());
+                    if (isNaN(target)) {
+                        this.printLine('?SYNTAX ERROR IN ' + lineNum, 'error');
+                        return { end: true };
+                    }
+                    return { goto: target };
+                }
+
+                // END statement
+                if (code === 'END' || code === 'STOP') {
+                    return { end: true };
+                }
+
+                // REM (comment)
+                if (code.startsWith('REM')) {
+                    return {};
+                }
+
+                // CLS
+                if (code === 'CLS' || code === 'CLEAR') {
+                    this.clearScreen();
+                    return {};
+                }
+
+                // Unknown command
+                return {};
+            },
+
+            // Execute PRINT statement
+            executePrint(arg) {
+                if (!arg) {
+                    this.printLine('');
+                    return;
+                }
+
+                // Handle string literals
+                const stringMatch = arg.match(/^"([^"]*)"(.*)$/);
+                if (stringMatch) {
+                    let output = stringMatch[1];
+                    const rest = stringMatch[2].trim();
+
+                    // Handle semicolon continuation
+                    if (rest.startsWith(';')) {
+                        const continuation = rest.substring(1).trim();
+                        if (continuation) {
+                            // Recursively handle continuation
+                            const contMatch = continuation.match(/^"([^"]*)"(.*)$/);
+                            if (contMatch) {
+                                output += contMatch[1];
+                            }
+                        }
+                    }
+
+                    this.printLine(output);
+                } else {
+                    // Print as-is (for expressions/variables - simplified)
+                    this.printLine(arg);
+                }
+            },
+
+            // List the program
+            listProgram() {
+                const lineNumbers = Object.keys(this.program).map(Number).sort((a, b) => a - b);
+
+                this.printLine('');
+                if (lineNumbers.length === 0) {
+                    this.printLine('(NO PROGRAM)');
+                } else {
+                    for (const num of lineNumbers) {
+                        this.printLine(num + ' ' + this.program[num]);
+                    }
+                }
+                this.printLine('');
+                this.printLine('READY.');
+            },
+
+            // Clear screen
+            clearScreen() {
+                const inputLine = this.screen.querySelector('.input-line');
+                this.screen.innerHTML = '';
+                if (inputLine) {
+                    this.screen.appendChild(inputLine);
+                }
+                this.printLine('READY.');
+            },
+
+            // Show help
+            showHelp() {
+                const help = [
+                    '',
+                    '*** BASIC COMMANDS ***',
+                    '',
+                    'RUN      - EXECUTE PROGRAM',
+                    'LIST     - SHOW PROGRAM',
+                    'NEW      - CLEAR PROGRAM',
+                    'CLS      - CLEAR SCREEN',
+                    '',
+                    '*** BASIC STATEMENTS ***',
+                    '',
+                    'PRINT "TEXT"  - DISPLAY TEXT',
+                    'GOTO N        - JUMP TO LINE N',
+                    'REM           - COMMENT',
+                    'END           - STOP PROGRAM',
+                    '',
+                    '*** SPECIAL COMMANDS ***',
+                    '',
+                    'ABOUT    - ABOUT ERWIN',
+                    'LINKS    - SHOW ALL LINKS',
+                    'PROJECTS - FEATURED PROJECTS',
+                    'ORIGINAL - GO TO RIED.CL',
+                    'DEMO     - RUN A DEMO',
+                    'MATRIX   - MATRIX EFFECT',
+                    '',
+                    'PRESS ESC OR S TO STOP',
+                    ''
+                ];
+
+                for (const line of help) {
+                    this.printLine(line);
+                }
+                this.printLine('READY.');
+            },
+
+            // Show about
+            showAbout() {
+                const ascii = `
+   ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+   █ ERWIN RIED              █
+   █ @eried                  █
+   ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀`;
+
+                const about = [
+                    '',
+                    ascii,
+                    '',
+                    'CIVIL COMPUTER ENGINEER',
+                    '',
+                    'BORN IN CHILE',
+                    'LIVING IN NORWAY',
+                    '',
+                    'MAKER | DEVELOPER | CREATOR',
+                    '',
+                    'TYPE "LINKS" FOR CONTACT',
+                    'TYPE "PROJECTS" FOR WORK',
+                    ''
+                ];
+
+                for (const line of about) {
+                    this.printLine(line);
+                }
+                this.printLine('READY.');
+            },
+
+            // Show links
+            showLinks() {
+                this.printLine('');
+                this.printLine('*** LINKS ***', 'highlight');
+                this.printLine('');
+
+                for (const link of this.links) {
+                    const linkHtml = `<a href="${link.url}" target="_blank">${link.name}</a> - ${link.desc}`;
+                    this.printLine(linkHtml);
+                }
+
+                this.printLine('');
+                this.printLine('READY.');
+            },
+
+            // Show projects
+            showProjects() {
+                this.printLine('');
+                this.printLine('*** FEATURED PROJECTS ***', 'highlight');
+                this.printLine('');
+
+                for (const proj of this.projects) {
+                    this.printLine('* ' + proj.name, 'success');
+                    this.printLine('  ' + proj.desc);
+                    this.printLine('');
+                }
+
+                this.printLine('TYPE "LINKS" FOR URLS');
+                this.printLine('');
+                this.printLine('READY.');
+            },
+
+            // Matrix effect
+            async matrixEffect() {
+                this.running = true;
+                this.breakRequested = false;
+                const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*';
+
+                this.printLine('');
+                this.printLine('MATRIX MODE - PRESS ESC TO STOP', 'success');
+                this.printLine('');
+
+                while (!this.breakRequested) {
+                    let line = '';
+                    for (let i = 0; i < 38; i++) {
+                        line += chars[Math.floor(Math.random() * chars.length)];
+                    }
+                    this.printLine(line, 'success');
+                    await this.delay(50);
+                }
+
+                this.running = false;
+                this.printLine('');
+                this.printLine('READY.');
+            },
+
+            // Demo program
+            async runDemo() {
+                this.program = {
+                    10: 'REM DEMO PROGRAM FOR RIED.NO',
+                    20: 'PRINT "================================"',
+                    30: 'PRINT "  WELCOME TO RIED.NO"',
+                    40: 'PRINT "================================"',
+                    50: 'PRINT ""',
+                    60: 'PRINT "ERWIN RIED - MAKER & DEVELOPER"',
+                    70: 'PRINT ""',
+                    80: 'PRINT "CHECK OUT MY PROJECTS:"',
+                    90: 'PRINT "- PORTAPACK MAYHEM"',
+                    100: 'PRINT "- FLIPPER ZERO ADD-ONS"',
+                    110: 'PRINT "- ARDUBOY COLLECTION"',
+                    120: 'PRINT ""',
+                    130: 'PRINT "TYPE LINKS FOR MORE INFO"',
+                    140: 'END'
+                };
+
+                this.printLine('');
+                this.printLine('DEMO PROGRAM LOADED', 'success');
+                this.printLine('TYPE "RUN" TO EXECUTE');
+                this.printLine('TYPE "LIST" TO VIEW CODE');
+                this.printLine('');
+                this.printLine('READY.');
+            },
+
+            // Utility: delay
+            delay(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            },
+
+            // Utility: scroll to bottom
+            scrollToBottom() {
+                this.screen.scrollTop = this.screen.scrollHeight;
+            }
+        };
+
+        // Mouse tracking for 3D tilt effect
+        const MouseTilt = {
+            container: null,
+            targetRotateX: 5,
+            targetRotateY: -8,
+            currentRotateX: 5,
+            currentRotateY: -8,
+            baseRotateX: 5,
+            baseRotateY: -8,
+            easing: 0.03,
+            maxTilt: 5,
+
+            init() {
+                this.container = document.querySelector('.monitor-container');
+
+                document.addEventListener('mousemove', (e) => {
+                    const centerX = window.innerWidth / 2;
+                    const centerY = window.innerHeight / 2;
+
+                    // Calculate offset from center (-1 to 1)
+                    const offsetX = (e.clientX - centerX) / centerX;
+                    const offsetY = (e.clientY - centerY) / centerY;
+
+                    // Set target rotation (inverted for natural feel)
+                    this.targetRotateY = this.baseRotateY + (offsetX * this.maxTilt);
+                    this.targetRotateX = this.baseRotateX - (offsetY * this.maxTilt * 0.6);
+                });
+
+                // Reset on mouse leave
+                document.addEventListener('mouseleave', () => {
+                    this.targetRotateX = this.baseRotateX;
+                    this.targetRotateY = this.baseRotateY;
+                });
+
+                this.animate();
+            },
+
+            animate() {
+                // Ease towards target
+                this.currentRotateX += (this.targetRotateX - this.currentRotateX) * this.easing;
+                this.currentRotateY += (this.targetRotateY - this.currentRotateY) * this.easing;
+
+                // Apply transform
+                if (this.container) {
+                    this.container.style.transform = `rotateX(${this.currentRotateX}deg) rotateY(${this.currentRotateY}deg)`;
+                }
+
+                requestAnimationFrame(() => this.animate());
+            }
+        };
+
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load Press Start 2P font as fallback
+            const link = document.createElement('link');
+            link.href = 'https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap';
+            link.rel = 'stylesheet';
+            document.head.appendChild(link);
+
+            C64.init();
+            MouseTilt.init();
+        });
+    </script>
+</body>
+</html>
