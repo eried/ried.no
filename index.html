@@ -424,6 +424,7 @@
         @media (max-width: 768px) {
             .monitor {
                 padding: 15px;
+                padding-bottom: 32px;
                 border-radius: 15px;
             }
 
@@ -458,6 +459,51 @@
                 width: 7px;
                 height: 10px;
             }
+        }
+
+        /* Scale down monitor to fit small viewports */
+        @media (max-height: 560px) and (max-width: 768px) {
+            .float-wrapper {
+                transform-origin: center center;
+                transform: scale(0.82);
+            }
+        }
+
+        @media (max-height: 480px) and (max-width: 768px) {
+            .float-wrapper {
+                transform-origin: center center;
+                transform: scale(0.7);
+            }
+        }
+
+        /* RUN/STOP touch button */
+        .run-stop-btn {
+            display: none;
+            position: fixed;
+            bottom: 18px;
+            right: 18px;
+            z-index: 100;
+            background: #9f4e44;
+            color: #fff;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 10px;
+            padding: 12px 16px;
+            border: 2px solid #cc6655;
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(159, 78, 68, 0.6);
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .run-stop-btn.visible {
+            display: block;
+            animation: pulse-stop 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-stop {
+            0%, 100% { box-shadow: 0 0 15px rgba(159, 78, 68, 0.6); }
+            50% { box-shadow: 0 0 25px rgba(159, 78, 68, 0.9); }
         }
 
         /* Loading screen */
@@ -502,6 +548,8 @@
             LOADING...
         </div>
     </div>
+
+    <button class="run-stop-btn" id="runStopBtn" aria-label="Stop running program">BREAK</button>
 
     <div class="float-wrapper">
         <div class="monitor-container">
@@ -573,8 +621,23 @@
             // Initialize the terminal
             init() {
                 this.screen = document.getElementById('screen');
+                this.runStopBtn = document.getElementById('runStopBtn');
+                this.runStopBtn.addEventListener('click', () => {
+                    if (this.running) {
+                        this.breakRequested = true;
+                    }
+                });
                 this.createStarfield();
                 this.bootSequence();
+            },
+
+            setRunning(state) {
+                this.running = state;
+                if (state) {
+                    this.runStopBtn.classList.add('visible');
+                } else {
+                    this.runStopBtn.classList.remove('visible');
+                }
             },
 
             // Create starfield background
@@ -899,7 +962,7 @@
                     return;
                 }
 
-                this.running = true;
+                this.setRunning(true);
                 this.breakRequested = false;
                 this.loopCount = 0;
 
@@ -941,7 +1004,7 @@
                     }
                 }
 
-                this.running = false;
+                this.setRunning(false);
                 this.printLine('');
                 this.printLine('READY.');
             },
@@ -1072,7 +1135,7 @@
                     'DEMO     - RUN A DEMO',
                     'MATRIX   - MATRIX EFFECT',
                     '',
-                    'PRESS ESC OR S TO STOP',
+                    'PRESS ESC/S OR TAP BREAK',
                     ''
                 ];
 
@@ -1146,12 +1209,12 @@
 
             // Matrix effect
             async matrixEffect() {
-                this.running = true;
+                this.setRunning(true);
                 this.breakRequested = false;
                 const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*';
 
                 this.printLine('');
-                this.printLine('MATRIX MODE - PRESS ESC TO STOP', 'success');
+                this.printLine('MATRIX MODE - ESC OR TAP BREAK', 'success');
                 this.printLine('');
 
                 while (!this.breakRequested) {
@@ -1163,7 +1226,7 @@
                     await this.delay(50);
                 }
 
-                this.running = false;
+                this.setRunning(false);
                 this.printLine('');
                 this.printLine('READY.');
             },
